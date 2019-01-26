@@ -1,8 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function App() {
+export default function() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
@@ -14,5 +12,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
