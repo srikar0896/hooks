@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
-import UseStatePlayground from './playground/useState';
-import UseEffectPlayground from './playground/useEffect';
-import { PlaygroundSection, PlayGround } from './components';
+import {
+  PlaygroundSection,
+  PlayGround
+}
+  from './components';
+import hooks from './playground';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <PlaygroundSection>
-          <h2>
-            UseState
-          </h2>
-          <PlayGround>
-            <UseStatePlayground />
-          </PlayGround>
-        </PlaygroundSection>
-  
-        <PlaygroundSection>
-          <h2>
-            UseEffect
-          </h2>
-          <PlayGround>
-            <UseEffectPlayground />
-          </PlayGround>
-        </PlaygroundSection>
+        {
+          hooks.map(hook => (
+            <PlaygroundSection key={hook.name}>
+              <h2>
+                {hook.name}
+              </h2>
+              <PlayGround>
+                <hook.example />
+              </PlayGround>
+            </PlaygroundSection>
+          ))
+        }
       </div>
     );
   }
