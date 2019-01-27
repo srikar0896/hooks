@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useDebugValue } from "react";
 import uuid from 'uuid/v1';
 
 const ChildCounter = ({ forkedCounter: { id, initialCount }, counterIndex }) => {
@@ -30,6 +30,7 @@ const ChildCounter = ({ forkedCounter: { id, initialCount }, counterIndex }) => 
 export default function() {
   const [count, setCount] = useState(0);
   const [forkedCounters, setForkedCounters] = useState([]);
+  useDebugValue(count);
   
   return (
     <>
