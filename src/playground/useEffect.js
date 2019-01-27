@@ -20,7 +20,7 @@ const ChildCounter = ({ forkedCounter: { id, initialCount }, counterIndex }) => 
       </button>
       {
         forkedCounters.map((forkedCounter, index) => (
-          <ChildCounter forkedCounter={forkedCounter} counterIndex={`${counterIndex}.${index + 1}`} />
+          <ChildCounter key={index} forkedCounter={forkedCounter} counterIndex={`${counterIndex}.${index + 1}`} />
         ))
       }
     </>
@@ -43,7 +43,7 @@ export default function() {
         </button>
         {
           forkedCounters.map((forkedCounter, index) => (
-            <ChildCounter forkedCounter={forkedCounter} counterIndex={`${1}.${index + 1}`} />
+            <ChildCounter key={index} forkedCounter={forkedCounter} counterIndex={`${1}.${index + 1}`} />
           ))
         }
       </div>
